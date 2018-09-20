@@ -1,0 +1,26 @@
+---
+title: "data_manipulation"
+output: html_document
+author: "Man Luo"
+date: 2018-09-20
+---
+
+```{r}
+library(tidyverse)
+```
+
+##Impot FAS cs file 
+
+import my data
+
+```{r}
+library(tidyverse)
+littles_data = read_csv(file ="./data/FAS_litters.csv")
+littles_data = janitor::clean_names(littles_data)
+
+```
+Import second data
+```{r}
+pups_data = read_csv(file = "./data/FAs_pups.csv")
+pups_data_absolute = read_csv(file = "C:/Users/Luo/Desktop/2018/P8105 ds/Project/Lec4 data_wrangling_i/data_wrangling_i/data/FAs_pups.csv")
+```

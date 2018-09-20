@@ -1,0 +1,58 @@
+---
+title: "data_wrangling_i"
+output: html_document
+author: "Man Luo"
+date: 2018-09-18
+---
+
+##Impot FAS cs file 
+
+import my data
+
+```{r}
+library(tidyverse)
+littles_data = read_csv(file ="./data/FAS_litters.csv")
+littles_data = janitor::clean_names(littles_data)
+
+```
+Import second data
+```{r}
+pups_data = read_csv(file = "./data/FAs_pups.csv")
+pups_data_absolute = read_csv(file = "C:/Users/Luo/Desktop/2018/P8105 ds/Project/Lec4 data_wrangling_i/data_wrangling_i/data/FAs_pups.csv")
+```
+##Look at the data
+```{r}
+head(littles_data)
+tail(littles_data)
+skimr::skim(littles_data)
+```
+
+skip some rows and ignore variable names
+```{r}
+litters_data = read_csv(file = "./data/FAS_litters.csv", skip = 10, col_names = FALSE)
+```
+
+##Take a look at pups
+
+```{r}
+pups_data = read_csv(file = "./data/FAS_pups.csv", col_types = "ciiiii")
+pups_data = janitor::clean_names(pups_data)
+skimr::skim(pups_data)
+```
+
+##Other format
+
+read in mlb data
+
+```{r}
+mlb_data = readxl::read_excel(path = "./data/mlb11.xlsx")
+mlb_data = readxl::read_excel(path = "./data/mlb11.xlsx",range = "A1:E11")
+
+```
+##read sas
+
+```{r}
+pulse_data = read_sas("./data/public_pulse_data.sas7bdat")
+pulse_data = haven:: read_sas("./data/public_pulse_data.sas7bdat")
+```
+
