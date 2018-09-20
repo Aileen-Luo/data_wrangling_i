@@ -1,6 +1,6 @@
 ---
 title: "data_wrangling_i"
-output: html_document
+output: github_document
 author: "Man Luo"
 date: 2018-09-18
 ---
@@ -49,10 +49,3 @@ mlb_data = readxl::read_excel(path = "./data/mlb11.xlsx")
 mlb_data = readxl::read_excel(path = "./data/mlb11.xlsx",range = "A1:E11")
 
 ```
-##read sas
-
-```{r}
-pulse_data = read_sas("./data/public_pulse_data.sas7bdat")
-pulse_data = haven:: read_sas("./data/public_pulse_data.sas7bdat")
-```
-
